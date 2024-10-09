@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Un message important pour toi</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url('https://source.unsplash.com/1600x900/?reflection,calm');
+            background-size: cover;
+            background-position: center;
+        }
+        .container {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            text-align: center;
+            max-width: 400px;
+        }
+        h2 {
+            color: #4a4a4a;
+            margin-bottom: 1rem;
+        }
+        p {
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 1rem;
+            border: 1px solid #4a4a4a;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        button {
+            background-color: #4a4a4a;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #333;
+        }
+        #erreur {
+            color: #d9534f;
+            font-style: italic;
+        }
+        .emoji {
+            font-size: 1.2em;
+        }
+    </style>
+    <script>
+        function verifierMotDePasse() {
+            const motDePasse = document.getElementById("motDePasse").value;
+            if (motDePasse === "Emma") {
+                window.location.href = "/page.html";
+            } else {
+                document.getElementById("erreur").textContent = "Ce n'est pas le bon mot. S'il te plaît, essaie encore.";
+            }
+        }
+        
+        console.log('Pardon Emma')
+        console.log('Sorry')
+        console.log('Signé Kelvin')
+    </script>
+</head>
+<body>
+    <div class="container">
+
+    <audio  autoplay loop hidden><source src="musicforemma.mp3" type="audio/mpeg">
+          Votre navigateur ne supporte pas l'élément audio</audio>
+          
+          
+          
+        <h2>Un message important pour toi <span class="emoji">🤲</span></h2>
+        <p>J'ai quelque chose d'important à te dire. Le mot de passe est ton prénom.</p>
+        <input type="password" id="motDePasse" placeholder="Entre le mot de passe ici">
+        <button onclick="verifierMotDePasse()">Lire le message</button>
+        <p id="erreur"></p>
+        <p>Ce message vient du cœur. J'espère que tu prendras le temps de le lire. <span class="emoji">🙏</span></p>
+    </div>
+</body>
+</html>
